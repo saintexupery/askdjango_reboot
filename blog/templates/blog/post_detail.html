@@ -1,0 +1,10 @@
+<h1>{{post.title}}</h1>
+
+{{ post.created_at }}
+{{ post.updated_at }}
+
+<hr/>
+
+<img src="{{ post.photo.url }}" height="50%" width="50%" />
+
+{{ post.content|linebreaks }}
