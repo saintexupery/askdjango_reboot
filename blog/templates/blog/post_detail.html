@@ -1,12 +1,16 @@
-<h1>{{post.title}}</h1>
+{% extends 'blog/base.html' %}
 
-{{ post.created_at }}
-{{ post.updated_at }}
+{% block content %}
+    <h1>{{post.title}}</h1>
 
-<hr/>
+    {{ post.created_at }}
+    {{ post.updated_at }}
 
-<img src="{{ post.photo.url }}" height="50%" width="50%" />
+    <hr/>
 
-{{ post.content|linebreaks }}
-<hr/>
-<a href="{% url 'blog:index' %}">글 목록으로</a>
+    <img src="{{ post.photo.url }}" height="50%" width="50%" />
+
+    {{ post.content|linebreaks }}
+    <hr/>
+    <a href="{% url 'blog:index' %}">글 목록으로</a>
+{% endblock %}
